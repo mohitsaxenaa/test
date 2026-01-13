@@ -1,0 +1,29 @@
+{
+  "manifest_version": 3,
+  "name": "Stable Locator Inspector PRO",
+  "version": "2.1.0",
+  "description": "Professional-grade locator finder with intelligent scoring, accessibility analysis, and DOM/ARIA tree extraction for enterprise test automation",
+  "permissions": ["activeTab", "scripting", "clipboardWrite"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Stable Locator Inspector - Professional Web Element Analysis"
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "css": ["tooltip.css", "panel.css"]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["panel.html"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}

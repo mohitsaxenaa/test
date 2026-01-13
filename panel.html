@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <style>
+    @import url('panel.css');
+  </style>
+</head>
+<body>
+  <div id="locator-panel">
+    <div class="panel-header">
+      <h2>🎯 Stable Locator Inspector</h2>
+      <div class="panel-controls">
+        <button id="copy-json" class="btn" title="Copy element data as JSON">
+          📋 Copy JSON
+        </button>
+        <button id="copy-dom-tree" class="btn" title="Copy entire DOM tree">
+          🌳 DOM Tree
+        </button>
+        <button id="copy-aria-tree" class="btn" title="Copy ARIA tree">
+          ♿ ARIA
+        </button>
+        <button id="close-panel" class="btn close" title="Close panel">×</button>
+      </div>
+    </div>
+
+    <div class="panel-content">
+      <div class="section">
+        <h3>📊 Element Summary</h3>
+        <div id="element-summary" class="summary"></div>
+      </div>
+
+      <div class="section">
+        <h3>🏆 Locator Ranking (Best to Worst)</h3>
+        <div class="table-container">
+          <table class="locator-table" id="locator-table">
+            <thead>
+              <tr>
+                <th>Rank</th>
+                <th>Type</th>
+                <th>Locator Value</th>
+                <th>Score</th>
+                <th>Stability</th>
+                <th>Copy</th>
+              </tr>
+            </thead>
+            <tbody id="locator-table-body"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="section">
+        <h3>💡 Recommendations & Code</h3>
+        <div id="recommendations"></div>
+      </div>
+
+      <div class="section">
+        <h3>📝 DOM & Accessibility Data</h3>
+        <div class="tabs">
+          <button class="tab-btn active" data-tab="dom">DOM Info</button>
+          <button class="tab-btn" data-tab="aria">ARIA Tree</button>
+          <button class="tab-btn" data-tab="attributes">Attributes</button>
+        </div>
+        <div class="tab-content">
+          <div id="dom-content" class="tab-pane active">
+            <pre id="dom-snippet"></pre>
+          </div>
+          <div id="aria-content" class="tab-pane">
+            <pre id="aria-tree"></pre>
+          </div>
+          <div id="attributes-content" class="tab-pane">
+            <table class="attr-table" id="attributes-table"></table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
