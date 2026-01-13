@@ -132,6 +132,4 @@ All 13 locator types detected and ranked automatically:
 
 ---
 
-## 📋 Panel Sections
 
-### 1. Element Summary
